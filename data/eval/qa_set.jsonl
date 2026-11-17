@@ -1,0 +1,27 @@
+{"q": "北京出差住宿一晚最多能报销多少", "doc": "hr_expense", "keywords": ["600"], "answerable": true}
+{"q": "出差一天的补贴是多少钱", "doc": "hr_expense", "keywords": ["120"], "answerable": true}
+{"q": "报销单要在多久之内提交", "doc": "hr_expense", "keywords": ["30"], "answerable": true}
+{"q": "5000 元以上的报销需要谁审批", "doc": "hr_expense", "keywords": ["部门负责人"], "answerable": true}
+{"q": "一线城市包含哪些城市", "doc": "hr_expense", "keywords": ["北京", "上海", "广州", "深圳"], "answerable": true}
+{"q": "入职满三年年假有几天", "doc": "hr_leave", "keywords": ["5"], "answerable": true}
+{"q": "年假最晚可以什么时候休完", "doc": "hr_leave", "keywords": ["3 月 31"], "answerable": true}
+{"q": "病假三天以内工资怎么算", "doc": "hr_leave", "keywords": ["80%"], "answerable": true}
+{"q": "请假 5 天需要谁审批", "doc": "hr_leave", "keywords": ["部门负责人", "HRBP"], "answerable": true}
+{"q": "陪产假有多少天", "doc": "hr_leave", "keywords": ["7"], "answerable": true}
+{"q": "常规发布要经过哪几步", "doc": "ops_release", "keywords": ["审批", "灰度"], "answerable": true}
+{"q": "灰度发布先放多少流量", "doc": "ops_release", "keywords": ["10%"], "answerable": true}
+{"q": "紧急发布需要几个人审批", "doc": "ops_release", "keywords": ["技术负责人"], "answerable": true}
+{"q": "周五下午可以发布吗", "doc": "ops_release", "keywords": ["17:00", "禁止"], "answerable": true}
+{"q": "P0 故障要求多久内响应", "doc": "ops_incident", "keywords": ["5 分钟"], "answerable": true}
+{"q": "值班一般什么时候交接", "doc": "ops_incident", "keywords": ["周一"], "answerable": true}
+{"q": "出现故障第一步应该做什么", "doc": "ops_incident", "keywords": ["止损"], "answerable": true}
+{"q": "文本块长度控制在多少比较合适", "doc": "tech_rag_basics", "keywords": ["300", "500"], "answerable": true}
+{"q": "RRF 是什么，为什么用它", "doc": "tech_hybrid_retrieval", "keywords": ["名次"], "answerable": true}
+{"q": "为什么要同时用 BM25 和向量检索", "doc": "tech_hybrid_retrieval", "keywords": ["同义", "编号"], "answerable": true}
+{"q": "recall@k 这个指标衡量什么", "doc": "tech_eval", "keywords": ["前 k"], "answerable": true}
+{"q": "送给模型的上下文一般控制在多少字", "doc": "tech_prompt", "keywords": ["1500", "2500"], "answerable": true}
+{"q": "量化项目回测的最大回撤是多少", "doc": "project_quant_agent", "keywords": ["-14"], "answerable": true}
+{"q": "量化项目的回测有没有未来函数", "doc": "project_quant_agent", "keywords": ["未来函数"], "answerable": true}
+{"q": "公司年会在哪里举办", "doc": null, "keywords": [], "answerable": false}
+{"q": "食堂几点开门", "doc": null, "keywords": [], "answerable": false}
+{"q": "A 股印花税税率是多少", "doc": null, "keywords": [], "answerable": false}

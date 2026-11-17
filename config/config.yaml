@@ -1,0 +1,51 @@
+# ============================================================
+# 知识库问答 Agent —— 全局配置
+# 所有阈值都集中在这里，代码里不写魔法数字，方便做消融实验
+# ============================================================
+
+project: kb-qa-agent
+
+paths:
+  corpus_dir: data/corpus
+  index_file: data/index/index.pkl
+  eval_file: data/eval/qa_set.jsonl
+  report_dir: reports
+
+chunk:
+  max_chars: 460          # 单块上限（中文约 2~3 个自然段），再大检索精度会掉
+  min_chars: 120          # 低于此长度的尾块并回上一块，避免碎片
+  overlap: 80             # 相邻块重叠字符（按句子对齐，不切半句）
+
+retrieval:
+  bm25_k: 20              # 词法通道召回条数
+  vector_k: 20            # 向量通道召回条数
+  top_k: 5                # 融合后送进重排的条数
+  rrf_k: 60               # RRF 平滑常数，越大越平均
+  min_coverage: 0.14      # 问题字符被 top1 块覆盖的比例低于此值 → 判定无依据，直接拒答
+  expand_coverage: 0.28   # 低于此值 → 触发一次查询扩展，做二次检索
+  neighbor_bonus: 0.45    # 邻块继承父块分数的比例，缓解切分边界丢信息
+
+rerank:
+  weight_term_coverage: 0.55   # 查询词覆盖率
+  weight_heading: 0.25         # 命中的标题层级
+  weight_length: 0.20          # 长度惩罚（过短信息量不足）
+  retrieval_weight: 0.50       # 最终分 = 召回分*0.5 + 重排分*0.5
+
+answer:
+  max_sentences: 3        # 抽取式答案最多几句
+  max_per_chunk: 2        # 同一块最多贡献几句，防止答案来自单一文档
+  max_context_chars: 1800 # 送给 LLM 的上下文预算
+  ground_threshold: 0.34  # 引用支持度低于此值 → 加免责声明或拒答
+
+llm:
+  enabled: false                     # 默认关闭：无 Key 时走抽取式，保证离线可跑
+  base_url: https://api.deepseek.com/v1
+  model: deepseek-chat
+  api_key_env: DEEPSEEK_API_KEY
+  temperature: 0.2
+  timeout: 60
+
+server:
+  host: 127.0.0.1
+  port: 8020
+  memory_turns: 6         # 会话记忆保留轮数（多轮改写要用）

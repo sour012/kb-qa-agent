@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# 索引是构建产物，clone 后一条命令即可重建
+data/index/*.pkl
+
+# 报告里的逐题明细体积大，只保留汇总
+reports/eval.json
