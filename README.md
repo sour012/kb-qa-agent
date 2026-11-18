@@ -5,6 +5,9 @@
 ## 快速开始
 
 ```bash
+git clone git@github.com:sour012/kb-qa-agent.git   # HTTPS: https://github.com/sour012/kb-qa-agent.git
+cd kb-qa-agent
+
 pip install -r requirements.txt
 
 # 1) 建索引（把 data/corpus 下的文档切分、建 BM25 + 向量双索引）
